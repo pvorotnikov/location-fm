@@ -24,5 +24,19 @@ namespace location_fm
         {
             InitializeComponent();
         }
+
+        void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (SharedState.Authorizer == null)
+                new OAuth().Show();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            var type = Type.GetType((sender as MenuItem).Tag as string);
+            Window formInst = (Window)Activator.CreateInstance(type);
+
+            formInst.Show();
+        }
     }
 }

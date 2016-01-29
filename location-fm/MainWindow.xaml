@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:location_fm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Location.FM" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
-        
+        <DockPanel LastChildFill="False" >
+            <Menu DockPanel.Dock="Top">
+                <MenuItem BorderThickness="5" Header="Status">
+                    <MenuItem BorderThickness="5" Header="Home Timeline" Tag="location_fm.StatusDemos.HomeTimelineWindow" Click="MenuItem_Click"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
     </Grid>
 </Window>
