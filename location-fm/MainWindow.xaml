@@ -5,14 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:location_fm"
         mc:Ignorable="d"
-        Title="Location.FM" Height="350" Width="525" Loaded="Window_Loaded">
+        Title="Location.FM" Height="600" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <DockPanel LastChildFill="False" >
-            <Menu DockPanel.Dock="Top">
-                <MenuItem BorderThickness="5" Header="Status">
-                    <MenuItem BorderThickness="5" Header="Home Timeline" Tag="location_fm.StatusDemos.HomeTimelineWindow" Click="MenuItem_Click"/>
-                </MenuItem>
-            </Menu>
-        </DockPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Button x:Name="refreshTweetsBtn" Content="Refresh Tweets" Click="refreshTweetsBtn_Click" Width="100" HorizontalAlignment="Left" Margin="10,10,0,10" />
+
+        <DataGrid HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="auto" Grid.Row="1" ItemsSource="{Binding Tweets}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding ImageSource}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding Message}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        
     </Grid>
 </Window>

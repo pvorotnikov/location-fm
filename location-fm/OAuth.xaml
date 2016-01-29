@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:location_fm"
         mc:Ignorable="d"
-        Title="OAuth" Height="350" Width="525" Loaded="Window_Loaded">
+        Title="OAuth" Height="600" Width="800" Loaded="Window_Loaded">
     <Grid>
         <DockPanel HorizontalAlignment="Stretch" LastChildFill="False" VerticalAlignment="Stretch" Grid.ColumnSpan="2">
-            <WebBrowser x:Name="OAuthWebBrowser" DockPanel.Dock="Top" Height="275"/>
+            <WebBrowser x:Name="OAuthWebBrowser" DockPanel.Dock="Top" Height="520"/>
             <StackPanel VerticalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Label Content="PIN:" Margin="5" VerticalAlignment="Center"/>
                 <TextBox x:Name="PinTextBox" TextWrapping="Wrap" Width="120" Margin="5" VerticalAlignment="Center"/>
